@@ -1,0 +1,52 @@
+ClrHome
+Disp "INITIALIZING..."
+0→C
+1→M
+ClrHome
+Disp "WELCOME!"
+Repeat getKey
+End
+While 1
+ClrHome
+Menu("CLICKER MENU","CLICK!",1,"CHECK TOTAL",2,"UPGRADE MUL",3,"EXIT GAME",10)
+Lbl 1
+Disp "YOU CLICKED!"
+C+M→C
+Goto 5
+Lbl 2
+Disp "YOU CURRENTLY"
+Disp "CLICKED"
+Disp C
+Disp "TIMES..."
+Disp "PRESS ANY KEY..."
+Repeat getKey
+End
+Goto 5
+Lbl 3
+Menu("PRICE:50","UPGRADE",6,"CANCEL",5)
+Lbl 6
+Disp "UPGRADING..."
+If C≥50:Then
+C-50→C
+M+1→M
+Else
+Disp "NOT ENOUGH CLCKS"
+Repeat getKey
+End
+End
+Goto 5
+Lbl 4
+Disp "YOUR MULTIPLIER"
+Disp "IS CURRENTLY:"
+Disp M
+Disp "PRESS ANY KEY..."
+Repeat getKey
+End
+Lbl 5
+End
+Lbl 10
+DelVar C
+DelVar M
+ClrHome
+Disp "THANKS FOR"
+Disp "PLAYING!"
